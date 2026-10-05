@@ -1,68 +1,82 @@
-# Place-Verify
+# PlaceVerify
 
 ### AI-Powered Placement Information App
 
-PlaceVerify is an Android app that helps students manage placement opportunities and understand placement notices using AI.
+PlaceVerify is an Android app that helps students manage placement opportunities and quickly understand placement notices using AI.
 
 ## Problem
 
-Placement information is often scattered across WhatsApp groups, PDFs, and messages. Students may miss important details such as eligibility, deadlines, and job roles.
+Placement information is often scattered across WhatsApp groups, PDFs, and messages. Important details like eligibility, job role, package, and deadlines can easily be missed.
+
+PlaceVerify brings this information into one simple app.
 
 ## Features
 
-- 🔐 Student Login/Register
-- 📢 Placement Updates
-- 🔎 Search Placement Opportunities
-- 📄 Upload Placement Notice
-- 🤖 AI extracts:
-  - Company
-  - Job Role
-  - Eligibility
-  - Package
-  - Deadline
-- 📝 AI-generated summary of placement notices
-- 🔖 Save important opportunities
+- 🔐 Student Login / Register
+- 📢 View placement opportunities
+- 🔎 Search placement opportunities
+- 📄 Upload placement notices
+- 🤖 AI-based placement notice analysis
+- 📝 AI-generated summaries
+- 🔖 Save placement opportunities
 - 🔔 Deadline notifications
 
 ## AI Feature
 
-The app uses AI to analyze placement notices and automatically extract important information and generate a short summary.
+The main AI feature is **Placement Notice Analysis**.
+
+Users can upload a placement notice as an image or document. The AI analyzes it and extracts important information.
 
 ### Example
 
-**Input:** Placement PDF/Image
+**Input:** Placement Notice
 
 **AI Output:**
+
 - Company: ABC Technologies
 - Role: Software Engineer
 - Eligibility: 7+ CGPA
 - Package: 8 LPA
-- Deadline: 15 Oct
+- Deadline: 15 October
 
-## Tech Stack
+The AI also generates a short summary of the notice.
+
+## Technology Stack
+
+### Android
 
 - Kotlin
 - Jetpack Compose
-- Spring Boot
-- MySQL
-- REST API
-- LLM API / AI Service
+- Material 3
+- Kotlin Coroutines
 
-## Basic Architecture
+### Firebase
 
-Android App → Spring Boot Backend → MySQL  
-                             ↓  
-                           AI API
+- Firebase Authentication
+- Cloud Firestore
+- Firebase Storage
+- Firebase Cloud Messaging
 
-## Team
+### AI
 
-**2 Members**
+- LLM API
+- OCR / Document Text Extraction
 
-- Rinku: Android + UI
-- Arpit: Backend + AI
+## Architecture
 
-Both members contribute to testing and deployment.
-
-## Goal
-
-Build and publish a simple, useful placement assistant for college students.
+```text
+Android App
+     |
+     ├── Firebase Authentication
+     |
+     ├── Cloud Firestore
+     |
+     ├── Firebase Storage
+     |
+     └── AI API
+            |
+            ↓
+    Extracted Information
+            |
+            ↓
+        Android App
